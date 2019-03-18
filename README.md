@@ -1,7 +1,7 @@
 # sparkLogNasa
 
-##Cache
-
+Cache
+-------------
 O comando cache persiste (armazena) em memória (default – MEMORY_ONLY) o conjuntos de dados na primeira vez que foram processados, permitindo que sejam reutilizados em outras aç?es com uma rapidez 10x mais rápidos.
 
 
