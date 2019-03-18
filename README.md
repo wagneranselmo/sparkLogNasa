@@ -35,20 +35,18 @@ O groupByKey trabalha com chave e lista de valores, gerando troca de dados em ex
 Explique o que o código Scala abaixo faz. 
 -----------------------------------------
 
+```
 // Abre o arquivo no caminho informado no método textFile do SparkContext
-
 val textFile = sc.textFile("hdfs://...")
 
 //  Cria uma única lista com todas as palavras encontradas no texto
-
 val counts = textFile.flatMap(line => line.split(" ")) // quebra linha por " " 
 	.map(word => (word, 1)) // Avalia uma funç?o sobre cada elemento na lista
 	.reduceByKey(_ + _) // processa o conteúdo do arquivo em memória
 
 // Salva a lista em arquivo particionado, ex.: part-0000, PART-00001, ...
-
 counts.saveAsTextFile("hdfs://...") 
-
+```
 
 
 Referências
